@@ -1,17 +1,15 @@
-import { Flex, Stack, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-    return(
-        <Flex as="nav" justify="space-between" align="center" p={4} w="100%">
-
-        <Stack direction="row" spacing={3} justify="flex-start">
-            <Button as={Link} to="/" variant="ghost" color="white">Home</Button>
-            <Button as={Link} to="/" variant="ghost" color="white">About</Button>
-            <Button as={Link} to="/" variant="ghost" color="white">Projects</Button>
-        </Stack>
-        </Flex>
-    );
+  return (
+    <nav className="flex justify-between items-center p-4 bg-purple-700 text-white">
+      <div className="flex space-x-4">
+        <Link to="/" className="hover:text-purple-300">Home</Link>
+        <Link to="/about" className="hover:text-purple-300">About</Link>
+        <Link to="/projects" className="hover:text-purple-300">Projects</Link>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
