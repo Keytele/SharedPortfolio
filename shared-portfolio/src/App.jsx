@@ -9,7 +9,9 @@ import Footer from "./Components/Footer.jsx";
 
 
 // Import pages
-import Home from "./Pages/Home.jsx"
+import Home from "./Pages/Home.jsx";
+import About from "./Pages/About.jsx";
+import Projects from "./Pages/Projects.jsx";
 
 
 function App() {
@@ -17,11 +19,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/about" element={<h1>About Us</h1>} />
-          <Route path="/projects" element={<h1>Projects</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
-        <Home />
         <Footer />
       </Router>
   );
