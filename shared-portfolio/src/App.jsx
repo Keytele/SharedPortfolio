@@ -10,7 +10,7 @@ import Footer from "./Components/Footer.jsx";
 
 // Import pages
 import Home from "./Pages/Home.jsx";
-import About from "./Pages/About.jsx";
+import About from "./Pages/AboutJosh.jsx";
 import Projects from "./Pages/Projects.jsx";
 
 
