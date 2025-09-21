@@ -32,6 +32,7 @@ function Navbar() {
 
         <Link to="/projects" className="hover:text-purple-300">Projects</Link>
         <Link to="/contact" className="hover:text-purple-300">Contact</Link>
+        <Link to="/Sandbox" className="hover:text-purple-300">Sandbox</Link>
       </div>
     </nav>
   );

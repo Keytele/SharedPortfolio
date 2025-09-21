@@ -12,6 +12,8 @@ import Footer from "./Components/Footer.jsx";
 import Home from "./Pages/Home.jsx";
 import About from "./Pages/AboutJosh.jsx";
 import Projects from "./Pages/Projects.jsx";
+import Sandbox from './Pages/Sandbox.jsx'
+import AboutJosh from "./Pages/AboutJosh.jsx";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/sandbox" element={<Sandbox />} />
+          <Route path="/about/Josh" element={<AboutJosh />} />
         </Routes>
         <Footer />
       </Router>
