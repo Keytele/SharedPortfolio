@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+* {
+    box-sizing: border-box;
+}
+
+.button {
+    cursor: pointer;
+}
+
+:root {
+    background: #7D40E6;
+    background: linear-gradient(180deg, rgba(125, 64, 230, 1) 0%, rgba(69, 35, 126, 1) 52%, rgba(0, 0, 0 ,1) 100%); 
+    color: white;
+}
+
 navigationBar {
     background-color: blueviolet;
 }
