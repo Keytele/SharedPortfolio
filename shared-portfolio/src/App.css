@@ -18,3 +18,104 @@
 navigationBar {
     background-color: blueviolet;
 }
+
+/* === Reveal-on-scroll === */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* (already present) Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* === Horizontal infinite marquee (unchanged logic) === */
+.marquee { 
+  overflow: hidden; 
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee__inner {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marquee-x 30s linear infinite;
+  padding: 0 12px;
+}
+.marquee__item {
+  flex: 0 0 auto;
+  width: 10rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.6);
+}
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { transition: none; transform: none; opacity: 1; }
+  .marquee__inner { animation: none; }
+}
+
+/* === About/Contact unique reveals (distinct from .reveal-up) === */
+.about-reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(.98) rotateX(.5deg);
+  filter: saturate(.9);
+  transition:
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(.2,.8,.2,1),
+    filter 600ms ease;
+  transition-delay: var(--a-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+.about-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotateX(0deg);
+  filter: saturate(1);
+}
+
+/* Tab underline accent for About pages */
+.tab-underline { position: relative; }
+.tab-underline::after {
+  content:"";
+  position:absolute;
+  left:12px; right:12px; bottom:8px; height:2px;
+  background: rgba(255,255,255,.65);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms ease;
+}
+.tab-underline[aria-pressed="true"]::after,
+.tab-underline:hover::after { transform: scaleX(1); }
+
+/* Contact hero – subtle Ken Burns zoom-out */
+.kenburns {
+  animation: kenburns-zoom 18s ease-out both;
+  transform-origin: center;
+}
+@keyframes kenburns-zoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal { transition: none; transform: none; opacity: 1; filter: none; }
+  .kenburns { animation: none; }
+}

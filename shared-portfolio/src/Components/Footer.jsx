@@ -1,24 +1,45 @@
+import { Link } from "react-router-dom";
+import React from "react";
+
 function Footer() {
-return(
-        <>
-            <footer className="bg-black mt-10">
-                <div className="w-full max-w-screen mx-auto shadow-sm p-3">
-                    <div className="flex justify-center mt-5">
-                        <span className="text-white"></span>
-                        <ul className="flex flex-wrap text-white">
-                            <li>
-                                <a href="#" className="hover:underline md:me-8">Home</a>
-                                <a href="#" className="hover:underline md:me-8">About</a>
-                                <a href="#" className="hover:underline md:me-8">Projects</a>
-                                <a href="#" className="hover:underline md:me-8">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                <hr className="h-1 mx-auto my-15 bg-white border-0 rounded-sm"></hr>
-                <span className="flex text-white text-2xl justify-center align-center flex-row mb-5">Aghilesh Arasu and Joshua Aldridge 2025</span>
-                </div>
-            </footer>   
-        </>
-    )
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add("is-visible");
+        obs.unobserve(el);
+      }
+    }, { threshold: 0.15 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <footer className="mt-24">
+      <div
+        ref={ref}
+        className="reveal-up bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-10"
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <nav className="flex justify-center gap-8 text-white/80">
+            <Link to="/" className="hover:text-white">Home</Link>
+            <Link to="/about" className="hover:text-white">About</Link>
+            <Link to="/projects" className="hover:text-white">Projects</Link>
+            <Link to="/contact" className="hover:text-white">Contact</Link>
+          </nav>
+
+          <hr className="mt-6 border-white/20" />
+
+          <p className="text-center text-sm text-white/60 py-6">
+            Aghilesh Arasu &amp; Joshua Aldridge • 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
+
 export default Footer;
