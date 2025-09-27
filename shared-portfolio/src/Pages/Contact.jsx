@@ -1,0 +1,194 @@
+
+import React from "react";
+import "../App.css"; // ensure Tailwind utilities are available sitewide
+
+// Simple SVG icons (no external libs)
+const IconLinkedIn = (props) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.036-1.851-3.036-1.853 0-2.136 1.447-2.136 2.943v5.662H9.0V9h3.11v1.561h.044c.434-.824 1.494-1.692 3.074-1.692 3.29 0 3.897 2.165 3.897 4.983v6.6zM5.337 7.433a1.806 1.806 0 1 1 0-3.612 1.806 1.806 0 0 1 0 3.612zM6.999 20.452H3.675V9H6.999v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
+  </svg>
+);
+
+const IconGitHub = (props) => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.35-1.75-1.35-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.91 0-1.3.47-2.36 1.24-3.19-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.22a11.46 11.46 0 0 1 6 0c2.28-1.54 3.29-1.22 3.29-1.22.67 1.66.25 2.88.12 3.18.77.83 1.23 1.89 1.23 3.19 0 4.6-2.81 5.6-5.49 5.89.43.37.81 1.1.81 2.23v3.3c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z" fill="currentColor"/>
+  </svg>
+);
+
+export default function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Placeholder: wire this up to your email service / backend later
+    alert("Thanks! Your message has been captured (demo).");
+  };
+
+  return (
+    <main className="min-h-screen">
+      {/* Hero */}
+      <section
+        className="relative w-full"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1600&auto=format&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        aria-label="City skyline banner"
+      >
+        <div className="bg-black/40">
+          <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">GET IN TOUCH</h1>
+            <p className="mt-6 max-w-3xl text-lg leading-7">
+              Feel free to reach out for projects, collaborations and
+              send us a message to learn more.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contacts + Form */}
+      <section className="mx-auto max-w-6xl px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Left column: Aghi + Form */}
+        <div>
+          <h2 className="text-xl font-semibold tracking-wide">Contact Aghi</h2>
+
+          {/* Socials */}
+          <div className="mt-6 flex items-center gap-6">
+            <a
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Aghi on LinkedIn"
+            >
+              <IconLinkedIn className="h-6 w-6" />
+            </a>
+            <a
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Aghi on GitHub"
+            >
+              <IconGitHub className="h-6 w-6" />
+            </a>
+          </div>
+
+          {/* Contact form */}
+          <form onSubmit={handleSubmit} className="mt-10 space-y-4 max-w-md">
+            <div>
+              <label htmlFor="name" className="sr-only">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+                className="w-full rounded-md bg-white text-black placeholder-black/60 px-3 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/70"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="sr-only">E-mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="E-mail"
+                className="w-full rounded-md bg-white text-black placeholder-black/60 px-3 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/70"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="sr-only">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows={4}
+                className="w-full rounded-md bg-white text-black placeholder-black/60 px-3 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/70"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="rounded-md bg-white/80 text-black px-6 py-2 font-semibold hover:bg-white transition"
+            >
+              SEND
+            </button>
+          </form>
+        </div>
+
+        {/* Right column: Josh + Email blurb */}
+        <div>
+          <h2 className="text-xl font-semibold tracking-wide">Contact Josh</h2>
+
+          {/* Socials */}
+          <div className="mt-6 flex items-center gap-6">
+            <a
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Josh on LinkedIn"
+            >
+              <IconLinkedIn className="h-6 w-6" />
+            </a>
+            <a
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Josh on GitHub"
+            >
+              <IconGitHub className="h-6 w-6" />
+            </a>
+          </div>
+
+          {/* Shared email */}
+          <div className="mt-12">
+            <h3 className="text-base font-semibold">Shared IN</h3>
+            <a
+              href="mailto:hello@example.com"
+              className="mt-1 inline-block underline underline-offset-4"
+            >
+              E-mail Us Here
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations / Google Maps placeholders */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-lg font-medium">Our Locations</h3>
+            <div
+              id="map-aghi"
+              className="mt-4 aspect-video rounded-xl bg-black/20 ring-1 ring-white/25 flex items-center justify-center"
+            >
+              <span className="text-white/70 text-sm">
+                Google Map (Aghi) — embed here
+              </span>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium">Our Locations</h3>
+            <div
+              id="map-josh"
+              className="mt-4 aspect-video rounded-xl bg-black/20 ring-1 ring-white/25 flex items-center justify-center"
+            >
+              <span className="text-white/70 text-sm">
+                Google Map (Josh) — embed here
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Developer note: To integrate Google Maps later, mount Maps JS API:
+            const map = new google.maps.Map(document.getElementById('map-aghi'), {...});
+            const map2 = new google.maps.Map(document.getElementById('map-josh'), {...});
+        */}
+      </section>
+    </main>
+  );
+}

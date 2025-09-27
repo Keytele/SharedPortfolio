@@ -1,5 +1,5 @@
 // Import required libraries
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import React from "react";
 import "./App.css"
 
@@ -10,11 +10,10 @@ import Footer from "./Components/Footer.jsx";
 
 // Import pages
 import Home from "./Pages/Home.jsx";
-import About from "./Pages/AboutJosh.jsx";
 import Projects from "./Pages/Projects.jsx";
-import Sandbox from './Pages/Sandbox.jsx'
 import AboutJosh from "./Pages/AboutJosh.jsx";
-
+import AboutAghi from "./Pages/AboutAghi.jsx";
+import Contact from "./Pages/Contact.jsx";
 
 function App() {
   return (
@@ -22,10 +21,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/sandbox" element={<Sandbox />} />
-          <Route path="/about/Josh" element={<AboutJosh />} />
+          <Route path="/about/josh" element={<AboutJosh />} />
+          <Route path="/about/aghi" element={<AboutAghi />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<Navigate to="/about/josh" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </Router>
