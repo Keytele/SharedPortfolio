@@ -274,10 +274,8 @@ export default function Projects() {
           <Card className="p-6">
             <h4 className="text-lg font-semibold">How this page will evolve</h4>
             <p className="mt-2 text-white/80">
-              Each card routes to a focused mini‑app page. We can embed a live
-              preview next to the description, or open the tool in a dedicated
-              route (e.g. <code>/lab/qr</code>). Animations here are pure CSS +{" "}
-              <code>IntersectionObserver</code> — no libraries.
+              Each card routes to a focused mini‑app page. These projects are still in planning or in development. Animations here are pure CSS +{" "}
+              <code>IntersectionObserver</code>.
             </p>
           </Card>
         </section>
