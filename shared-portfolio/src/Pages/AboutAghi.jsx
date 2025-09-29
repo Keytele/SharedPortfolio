@@ -1,6 +1,7 @@
 // src/Pages/AboutAghi.jsx
 import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
+import aghiPic from "../assets/IMG_8996.jpg";
 
 function Chip({ children }) {
   return (
@@ -50,11 +51,28 @@ export default function AboutAghi() {
     <div className="grid lg:grid-cols-2 gap-10">
       <AboutReveal delay={60}><SectionCard>
         <h4 className="text-xl font-semibold">Deakin University</h4>
-        <p className="opacity-90">Dates</p>
-        <p className="mt-2">Bachelor of Information Technology</p>
-        <p className="mt-2 opacity-90">WAM: </p>
+        <p className="opacity-90">Feb 2021 - Jun 2024</p>
+        <p className="mt-2">Bachelor of Information Technology - Cybersecurity Minor</p>
+        <p className="mt-2 opacity-90">WAM: 63.660</p>
         <p className="mt-2 opacity-90">Add something here</p>
         <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip></div>
+      </SectionCard></AboutReveal>
+
+      <AboutReveal delay={60}><SectionCard>
+        <h4 className="text-xl font-semibold">INTI International Univeristy Malaysia</h4>
+        <p className="opacity-90">Aug 2017 - Jun 2020</p>
+        <p className="mt-2">Diploma of Information Technology</p>
+        <p className="mt-2 opacity-90">CGPA; 2.69 </p>
+        <p className="mt-2 opacity-90">Achievements: IBM/ICE Program</p>
+        <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip></div>
+      </SectionCard></AboutReveal>
+
+      <AboutReveal delay={60}><SectionCard>
+        <h4 className="text-xl font-semibold">Nilai International School</h4>
+        <p className="opacity-90">Jan 2010 - Jun 2017</p>
+        <p className="mt-2">Primary & High School Education</p>
+        <p className="mt-2 opacity-90">Achievement: IGSCE Award </p>
+        <p className="mt-2 opacity-90">Clubs: NIS Computer Club</p>
       </SectionCard></AboutReveal>
     </div>
   );
@@ -119,10 +137,10 @@ export default function AboutAghi() {
 
       <AboutReveal delay={120}>
         <div className="rounded-xl bg-white/20 backdrop-blur-sm p-4 sm:p-6 flex gap-5 items-center shadow-md">
-          <img src="/assets/aghi.jpg" alt="Picture of Aghi" className="h-44 w-36 object-cover rounded-md select-none" />
+          <img src={aghiPic} alt="Picture of Aghi" className="h-60 w-45 object-cover rounded-md select-none" />
           <div className="text-black bg-white rounded-md w-full p-4 sm:p-6">
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">NAME</h2>
-            <p className="mt-4 text-2xl font-semibold leading-snug">Summary Para</p>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Aghilesh Arasu</h2>
+            <p className="mt-4 text-2xl font-semibold leading-snug">Deakin University IT Graduate</p>
           </div>
         </div>
       </AboutReveal>

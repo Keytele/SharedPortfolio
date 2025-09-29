@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import "../App.css"; // keep Tailwind + animations
+import "../App.css";
+import bannerImg from "../assets/IMG_9895.jpg";
 
 const IconLinkedIn = (props) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -44,20 +45,19 @@ export default function Contact() {
         className="relative w-full kenburns"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1600&auto=format&fit=crop')",
+            `url(${bannerImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "50% 90%",
         }}
-        aria-label="City skyline banner"
+        aria-label="City skyline of Singapore"
       >
         <div className="bg-black/40">
           <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
             <Reveal as="h1" delay={0} className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-              GET IN TOUCH
+              Contact Us
             </Reveal>
             <Reveal as="p" delay={120} className="mt-6 max-w-3xl text-lg leading-7">
-              Feel free to reach out for projects, collaborations and
-              send us a message to learn more.
+              Feel free to reach out to know more about us!
             </Reveal>
           </div>
         </div>
@@ -126,21 +126,21 @@ export default function Contact() {
           <div className="mt-6 flex items-center gap-6">
             <Reveal delay={60}>
               <a className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
-                 href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="Josh on LinkedIn">
+                 href="https://www.linkedin.com/in/joshua-aldridge3" target="_blank" rel="noreferrer" aria-label="Josh on LinkedIn">
                 <IconLinkedIn className="h-6 w-6" />
               </a>
             </Reveal>
             <Reveal delay={120}>
               <a className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/90 text-black hover:bg-white transition"
-                 href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Josh on GitHub">
+                 href="https://github.com/Keytele" target="_blank" rel="noreferrer" aria-label="Josh on GitHub">
                 <IconGitHub className="h-6 w-6" />
               </a>
             </Reveal>
           </div>
 
           <Reveal delay={180} className="mt-12">
-            <h3 className="text-base font-semibold">Shared IN</h3>
-            <a href="mailto:hello@example.com" className="mt-1 inline-block underline underline-offset-4">
+            <h3 className="text-base font-semibold">Shared Inbox</h3>
+            <a href="mailto:aghijosh@outlook.com" className="mt-1 inline-block underline underline-offset-4">
               E-mail Us Here
             </a>
           </Reveal>

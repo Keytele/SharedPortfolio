@@ -1,6 +1,7 @@
 // src/Pages/AboutJosh.jsx
 import React, { useEffect, useRef, useState } from "react";
-import "../App.css"; // Tailwind + our new animation utilities
+import "../App.css";
+import joshPic from "../assets/IMG_5881.jpg";
 
 function Chip({ children }) {
   return (
@@ -65,25 +66,14 @@ export default function AboutJosh() {
         <p className="mt-2">Bachelor of Information Technology – Cybersecurity Major</p>
         <p className="mt-2 opacity-90">WAM: 69.458</p>
         <p className="mt-2 opacity-90">Clubs: Deakin University Computer Society</p>
-        <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip></div>
+        <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip><Chip>JavaScript</Chip><Chip>Vue.js</Chip><Chip>Kali Linux</Chip></div>
       </SectionCard></AboutReveal>
 
       <AboutReveal delay={120}><SectionCard>
-        <h4 className="text-xl font-semibold">Deakin University</h4>
-        <p className="opacity-90">Feb 2021 – Dec 2024</p>
-        <p className="mt-2">Bachelor of Information Technology – Cybersecurity Major</p>
-        <p className="mt-2 opacity-90">WAM: 69.458</p>
-        <p className="mt-2 opacity-90">Clubs: Deakin University Computer Society</p>
-        <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip></div>
-      </SectionCard></AboutReveal>
-
-      <AboutReveal delay={180}><SectionCard className="lg:col-span-2">
-        <h4 className="text-xl font-semibold">Deakin University</h4>
-        <p className="opacity-90">Feb 2021 – Dec 2024</p>
-        <p className="mt-2">Bachelor of Information Technology – Cybersecurity Major</p>
-        <p className="mt-2 opacity-90">WAM: 69.458</p>
-        <p className="mt-2 opacity-90">Clubs: Deakin University Computer Society</p>
-        <div className="mt-3"><Chip>Wireshark</Chip><Chip>HTML</Chip><Chip>CSS</Chip></div>
+        <h4 className="text-xl font-semibold">Launceston College</h4>
+        <p className="opacity-90">Feb 2019 - Nov 2020</p>
+        <p className="mt-2">Tasmanian Certificate of Education</p>
+        <p className="mt-2 opacity-90">ATAR: 63.70</p>
       </SectionCard></AboutReveal>
     </div>
   );
@@ -91,23 +81,54 @@ export default function AboutJosh() {
   const Work = () => (
     <div className="grid lg:grid-cols-2 gap-10">
       <AboutReveal delay={60}><SectionCard>
-        <h4 className="text-xl font-semibold">Cybersecurity Intern — Example Co.</h4>
-        <p className="opacity-90">Jun 2024 – Nov 2024</p>
+        <h4 className="text-xl font-semibold">Hypergen</h4>
+        <p className="opacity-90">Sep 2025 - Present</p>
         <ul className="list-disc list-inside mt-2 space-y-1 opacity-90">
-          <li>Assisted with network traffic analysis and incident triage.</li>
-          <li>Automated log parsing with Python to speed up investigations.</li>
+          <li>Using workflow and Microsoft Power Automate to create an automated customer service agent</li>
         </ul>
-        <div className="mt-3"><Chip>SIEM</Chip><Chip>Python</Chip><Chip>Packet Analysis</Chip></div>
+        <div className="mt-3"><Chip>Microsoft Power Automate</Chip><Chip>Python</Chip><Chip>Generative AI</Chip></div>
       </SectionCard></AboutReveal>
 
       <AboutReveal delay={120}><SectionCard>
-        <h4 className="text-xl font-semibold">IT Support (Part-time) — Campus</h4>
+        <h4 className="text-xl font-semibold">DeakinTALENT Digital Services Intern - Deakin University</h4>
         <p className="opacity-90">Feb 2023 – May 2024</p>
         <ul className="list-disc list-inside mt-2 space-y-1 opacity-90">
-          <li>Resolved tickets, imaging devices, and managing accounts.</li>
-          <li>Created quick-start docs to reduce repeat tickets.</li>
+          <li>Assisting with general administration and BAU duties within DeakinTALENT</li>
+          <li>Promptly responding to emails to both external and internal stakeholders at Deakin University and providing high-quality service, resulting in overall positive feedback from students/alumni/staff</li>
+          <li>Processing Deakin University alumni requests on the TargetConnect system and data entry on MS Excel</li>
+          <li>Conducting staff and permissions auditing for DeakinTALENT and Deakin University faculty staff</li>
+          <li>Revamped an internal data request form using Microsoft Lists & Power Automate</li>
+          <li>Developed a new Microsoft SharePoint homepage with an automatic event calendar system using Power Automate</li>
         </ul>
-        <div className="mt-3"><Chip>Windows</Chip><Chip>Azure AD</Chip><Chip>Documentation</Chip></div>
+        <div className="mt-3"><Chip>Microsoft Office</Chip><Chip>Microsoft Power Automate</Chip><Chip>Microsoft SharePoint</Chip><Chip>Internal and External Communications</Chip><Chip>Student Engagement</Chip><Chip>Administrative Assistance</Chip></div>
+      </SectionCard></AboutReveal>
+
+      <AboutReveal delay={120}><SectionCard>
+        <h4 className="text-xl font-semibold">DeakinTALENT FreelancingHUB Senior Intern</h4>
+        <p className="opacity-90">Feb 2023 – May 2024</p>
+        <ul className="list-disc list-inside mt-2 space-y-1 opacity-90">
+          <li>Collaborating with project manager and 53 interns across 7 teams and clients</li>
+          <li>Acting as Senior Intern for Trimester 1, 2 and 3, 2024 & Trimester 1, 2025</li>
+          <li>Hybrid working environment on MS Teams, Zoom across Geelong, Burwood and Online</li>
+          <li>Mentoring and guiding teams of 8-10 interns, leading to highly collaborative work environment and positive team culture</li>
+          <li>Engaging with clients through face-to-face and online meetings to gather requirements and presenting deliverables resulting in overall positive feedback</li>
+          <li>Using Figma and Canva to create multiple mock-up designs and templates to modernise existing websites/apps for clients and assisting in the creation of a comprehensive project report that include recommendations for further project development</li>
+        </ul>
+        <div className="mt-3"><Chip>Figma</Chip><Chip>Microsoft Power BI</Chip><Chip>Microsoft Office</Chip><Chip>Client Relations</Chip><Chip>Stakeholder Management</Chip><Chip>UX/UI Development</Chip></div>
+      </SectionCard></AboutReveal>
+
+      <AboutReveal delay={120}><SectionCard>
+        <h4 className="text-xl font-semibold">DeakinTALENT FreelancingHUB Project Intern</h4>
+        <p className="opacity-90">Nov 2023 – Dec 2023</p>
+        <ul className="list-disc list-inside mt-2 space-y-1 opacity-90">
+          <p>Client: Deakin and Community Childcare Centre (DACCC)</p>
+          <li>Project Stream Lead (Media)</li>
+          <li>Collaborating with project manager and senior intern along with 7 other project interns in a hybrid work environment</li>
+          <li>Collaborating with project manager and senior intern along with 7 other project interns</li>
+          <li>Capturing of images and photo editing using Adobe Lightroom</li>
+          <li>Designed colour palettes and high-fidelity website design mockups using Figma</li>
+        </ul>
+        <div className="mt-3"><Chip>UX/UI Development</Chip><Chip>Figma</Chip><Chip>Adobe Lightroom</Chip><Chip>Project Report Writing</Chip><Chip>Photography</Chip></div>
       </SectionCard></AboutReveal>
     </div>
   );
@@ -116,11 +137,9 @@ export default function AboutJosh() {
     <AboutReveal delay={60}>
       <SectionCard>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <li className="opacity-90">🏋️ Fitness & Calisthenics</li>
           <li className="opacity-90">🎮 Gaming</li>
           <li className="opacity-90">🧪 Security Labs & CTFs</li>
           <li className="opacity-90">📷 Photography</li>
-          <li className="opacity-90">🧑‍🍳 Cooking</li>
           <li className="opacity-90">✈️ Travel</li>
         </ul>
       </SectionCard>
@@ -133,7 +152,7 @@ export default function AboutJosh() {
         <div className="flex flex-wrap">
           <Chip>HTML</Chip><Chip>CSS</Chip><Chip>JavaScript</Chip><Chip>React</Chip>
           <Chip>Tailwind CSS</Chip><Chip>Wireshark</Chip><Chip>Linux</Chip>
-          <Chip>Git</Chip><Chip>Python</Chip>
+          <Chip>Git</Chip><Chip>Python</Chip><Chip>Microsoft Power Platform</Chip><Chip>Adobe Lightroom</Chip><Chip>Affinity Photography</Chip>
         </div>
       </SectionCard>
     </AboutReveal>
@@ -152,7 +171,7 @@ export default function AboutJosh() {
 
       <AboutReveal delay={120}>
         <div className="rounded-xl bg-white/20 backdrop-blur-sm p-4 sm:p-6 flex gap-5 items-center shadow-md">
-          <img src="/assets/josh.jpg" alt="Josh in front of the Merlion" className="h-44 w-36 object-cover rounded-md select-none" />
+          <img src={joshPic} alt="Josh in front of the Merlion" className="h-60 w-45 object-cover rounded-md select-none" />
           <div className="text-black bg-white rounded-md w-full p-4 sm:p-6">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Joshua Aldridge</h2>
             <p className="mt-4 text-2xl font-semibold leading-snug">Recent IT Graduate - Current Software Developer</p>

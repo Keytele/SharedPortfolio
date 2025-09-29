@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import joshPic from '../assets/IMG_5881.jpg';
+import aghiPic from '../assets/IMG_8996.jpg';
 import "../App.css";
 
 /** Simple reveal-on-scroll wrapper (no external libs) */
@@ -30,8 +32,7 @@ function Reveal({ as: Tag = "div", className = "", delay = 0, children }) {
   );
 }
 
-/* -------------------- Inline SVG Icons (from your message) -------------------- */
-/* Note: Some use <clipPath> IDs. React 18's useId() ensures uniqueness per instance. */
+/* -------------------- Inline SVG Icons -------------------- */
 
 const IconA = (props) => {
   const uid = React.useId();
@@ -170,8 +171,8 @@ const IconL = (props) => (
 
 export default function Home() {
   const founders = [
-    { name: "Aghilesh Arasu", blurb: "Deakin University IT Grad [PLACEHOLDER]" },
-    { name: "Joshua Aldridge", blurb: "Deakin University IT Grad [PLACEHOLDER]" },
+    { name: "Aghilesh Arasu", blurb: "Deakin University IT Graduate - Currently in Kuala Lumpur", img: aghiPic },
+    { name: "Joshua Aldridge", blurb: "Deakin University IT Graduate - Geelong based working at Hypergen as a Junior AI Developer. Experience with UI/UX, Microsoft Power Platform and automation", img: joshPic },
   ];
 
   // Replace text labels with actual SVG icon components
@@ -213,9 +214,9 @@ export default function Home() {
 
       {/* SHORT SUMMARY just below divider */}
       <Reveal as="section" className="px-6 pt-6 pb-4">
-        <div className="max-w-3xl mx-auto text-center text-white/85 leading-relaxed">
-          We’re two IT grads focused on building clean, usable web apps. Below you’ll
-          find a quick intro, our preferred stack, and ways to get in touch.
+        <div className="max-w-7xl mx-auto text-center text-white/85 leading-relaxed text-[25px]">
+          We’re two Deakin University IT Graduates. Below you’ll
+          find a quick intro and the tech used to build this site.
         </div>
       </Reveal>
 
@@ -232,7 +233,7 @@ export default function Home() {
               className="w-11/12 md:w-3/4 mx-auto rounded-2xl bg-white/5 backdrop-blur ring-1 ring-white/10 p-8 flex flex-col items-center text-center gap-5"
             >
               <div className="w-40 h-40 md:w-52 md:h-52 rounded-2xl bg-white/10 ring-1 ring-white/10 flex items-center justify-center text-white/60 text-sm">
-                IMAGE
+                <img src={p.img} alt={p.name} className="w-full h-full object-cover rounded-2xl" loading="lazy" decoding="async"/>
               </div>
               <div>
                 <h3 className="text-2xl md:text-3xl font-semibold">{p.name}</h3>
@@ -246,7 +247,7 @@ export default function Home() {
       {/* TECH STACK — horizontal infinite marquee, now with SVGs */}
       <Reveal as="section" className="px-6 py-16 mt-10">
         <Reveal delay={0}>
-          <h2 className="text-center text-4xl font-semibold">Tech Stack we use</h2>
+          <h2 className="text-center text-4xl font-semibold">Tech we used</h2>
         </Reveal>
 
         <Reveal delay={120}>
